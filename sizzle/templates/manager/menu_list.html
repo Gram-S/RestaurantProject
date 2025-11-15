@@ -1,0 +1,11 @@
+<h1>Menu</h1>
+<a href="{% url 'manager_add_menu_item' %}">Add New Item</a>
+
+<ul>
+  {% for item in items %}
+    <li>
+      {{ item.name }} - ${{ item.price }}
+      <a href="{% url 'manager_edit_menu_item' item.id %}">Edit</a>
+    </li>
+  {% endfor %}
+</ul>
